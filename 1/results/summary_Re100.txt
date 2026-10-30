@@ -1,0 +1,23 @@
+=================================================================
+ Flow past a cylinder, Re = 100  (redbKIT, P2-P1, BDF2)
+=================================================================
+ nu = 0.001,  Umean = 1,  D = 0.1,  dt = 0.01,  T = 15
+ mesh: 15968 triangles, 32446 P2 nodes, 71201 free dofs; wall-clock 127.1 min
+
+ Periodicity analysis on t in [10, 15]: 14 full lift cycles
+   period T          = 0.33567  (cycle-to-cycle std 8.33e-06)
+   frequency f       = 2.97910  (FFT: f_L = 2.9785, f_D = 5.9570 = 2.00 f_L)
+   max|C_L(t)-C_L(t+T)| = 2.99e-05,  max|C_D(t)-C_D(t+T)| = 1.05e-04
+
+                        present      FeatFlow ref     DFG 2D-2 range
+   C_D max               3.2195        3.2274        [3.2200, 3.2400]
+   C_D min               3.1582        3.1643
+   C_D mean              3.1897        3.1959
+   C_L max               0.9600        0.9866        [0.9900, 1.0100]
+   C_L min              -0.9947       -1.0213
+   Strouhal St=fD/U      0.2979        0.3018        [0.2950, 0.3050]
+   (peak spreads over cycles: C_D max 1.4e-04, C_L max 1.6e-05)
+
+ 26 samples on [14.5,15] -> results/CD_CL_Re100_t14.5-15_26pts.csv
+   C_D in [3.1585, 3.2193],  C_L in [-0.9841, 0.9600]
+=================================================================
