@@ -1,0 +1,6 @@
+Gmsh version 4.12.1
+LF: mesh/LF_coarse.msh  (s1 = 0.02, s3 = 0.005)
+    3903 nodes, 7480 triangles, 326 boundary edges -> 7806 Gmsh elements;  edge length in [0.0037, 0.0301]
+HF: mesh/HF_fine.msh  (s1 = 0.015, s3 = 0.002)
+    8236 nodes, 15962 triangles, 510 boundary edges -> 16472 Gmsh elements;  edge length in [0.0014, 0.0221]
+Paper (Fig. 6): LF 7798 elements / 3899 nodes, HF 16478 elements / 8239 nodes

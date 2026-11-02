@@ -1,0 +1,28 @@
+[2026-11-02 10:34:22] worker 1 started (pid 2701), 0/29 cases done
+[2026-11-02 10:34:42] worker 2 started (pid 2788), 0/29 cases done
+[2026-11-02 23:32:30] worker 2 (pid 2788) exited
+[2026-11-02 23:33:00] worker 2 started (pid 20745), 28/29 cases done
+[2026-11-02 23:34:00] worker 2 (pid 20745) exited
+[2026-11-02 23:34:30] worker 2 started (pid 20783), 28/29 cases done
+[2026-11-02 23:35:30] worker 2 (pid 20783) exited
+[2026-11-02 23:36:00] worker 2 started (pid 20827), 28/29 cases done
+[2026-11-02 23:37:00] worker 2 (pid 20827) exited
+[2026-11-02 23:37:30] worker 2 started (pid 20865), 28/29 cases done
+[2026-11-02 23:38:30] worker 2 (pid 20865) exited
+[2026-11-02 23:39:00] worker 2 started (pid 20905), 28/29 cases done
+[2026-11-02 23:40:00] worker 2 (pid 20905) exited
+[2026-11-02 23:40:30] worker 2 started (pid 20956), 28/29 cases done
+[2026-11-02 23:41:30] worker 2 (pid 20956) exited
+[2026-11-02 23:42:00] worker 2 started (pid 20995), 28/29 cases done
+[2026-11-02 23:43:00] worker 2 (pid 20995) exited
+[2026-11-02 23:43:30] worker 2 started (pid 21033), 28/29 cases done
+[2026-11-02 23:44:31] worker 2 (pid 21033) exited
+[2026-11-02 23:45:01] worker 2 started (pid 21071), 28/29 cases done
+[2026-11-02 23:46:01] worker 2 (pid 21071) exited
+[2026-11-02 23:46:31] worker 2 started (pid 21114), 28/29 cases done
+[2026-11-02 23:47:31] worker 2 (pid 21114) exited
+[2026-11-02 23:48:01] worker 2 started (pid 21150), 28/29 cases done
+[2026-11-02 23:49:01] worker 2 (pid 21150) exited
+[2026-11-02 23:49:31] worker 2 started (pid 21195), 28/29 cases done
+[2026-11-02 23:50:31] all 29 cases done -> building datasets and figures
+[2026-11-02 23:50:35] finished
