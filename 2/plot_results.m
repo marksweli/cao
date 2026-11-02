@@ -4,7 +4,7 @@ function plot_results()
 %   results/fig_CD_CL_LF_vs_HF_Re100.png   LF vs HF C_D, C_L at Re = 100 on
 %                                         [14.5, 15] (26 dataset samples)
 %   results/fig_history_LF_vs_HF_Re100.png full history t in [0, 15]
-%   results/fig_LF_HF_maps.png            lift / drag over (t, Re), LF and HF
+%   results/fig_LF_HF_maps.png            C_L / C_D over (t, Re), LF and HF
 %                                         (as Fig. 7 of the paper)
 %   results/fig_LF_vs_HF_allRe.png        C_D, C_L on [14.5, 15] for all HF Re
 %   results/fig_summary_vs_Re.png         mean C_D, max C_L, St versus Re
@@ -54,7 +54,7 @@ end
 
 % ---- 2) maps over (t, Re), as Fig. 7 of the paper ------------------------
 h = figure('visible', 'off', 'position', [100 100 1200 800]);
-D = {DL, DH};  F = {'Fy', 'Fx'};  Fn = {'Lift', 'Drag'};
+D = {DL, DH};  F = {'CL', 'CD'};  Fn = {'Lift coefficient C_L', 'Drag coefficient C_D'};
 for r = 1:2
     lims = [min(min(DL.(F{r})(:)), min(DH.(F{r})(:))), max(max(DL.(F{r})(:)), max(DH.(F{r})(:)))];
     for c = 1:2
@@ -62,8 +62,7 @@ for r = 1:2
         imagesc(D{c}.t, D{c}.Re, D{c}.(F{r}));  set(gca, 'ydir', 'normal');
         caxis(lims); colormap(jet(256)); colorbar;
         xlabel('t'); ylabel('Re');
-        title(sprintf('%s %s force F_%s (%d Re x %d t)', D{c}.fidelity, Fn{r}, ...
-                      char('y' - (r == 2)), numel(D{c}.Re), numel(D{c}.t)));
+        title(sprintf('%s: %s (%d Re x %d t)', D{c}.fidelity, Fn{r}, numel(D{c}.Re), numel(D{c}.t)));
     end
 end
 save_fig(h, fullfile(out, 'fig_LF_HF_maps.png'));
@@ -111,12 +110,12 @@ end
 fclose(fid);
 h = figure('visible', 'off', 'position', [100 100 1300 400]);
 ttl = {'mean C_D (t \in [10,15])', 'max C_L', 'Strouhal number St = f D / U_{mean}'};
-col = [2 4 6];
+col = [2 4 6];  loc = {'northeast', 'northwest', 'southeast'};
 for k = 1:3
     subplot(1, 3, k); hold on; box on; grid on;
     plot(T{1}(:,1), T{1}(:,col(k)), 'o-', 'color', cL);
     plot(T{2}(:,1), T{2}(:,col(k)), 's-', 'color', cH);
-    xlabel('Re'); title(ttl{k}); legend({'LF', 'HF'}, 'location', 'northeast');
+    xlabel('Re'); title(ttl{k}); legend({'LF', 'HF'}, 'location', loc{k});
 end
 save_fig(h, fullfile(out, 'fig_summary_vs_Re.png'));
 fprintf('figures written to %s\n', out);
